@@ -5,14 +5,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "localhost";
+    $servername = "my-mysql";
     $username = "root";
     $password = "root";
     $dbname = "CarService";
-    $port = 3307;
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname, $port);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
