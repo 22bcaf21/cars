@@ -3,7 +3,7 @@ session_start();
 
 // Redirect to login if user is not authenticated
 if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
-    header("Location: /carservice/login.php");
+    header("Location:login.php");
     exit();
 }
 
