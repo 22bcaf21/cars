@@ -76,7 +76,7 @@ if (!isset($_SESSION['user_email'])) {
         </div>
 
         <h2 class="text-2xl font-semibold text-gray-800 mb-6">Our Services</h2>
-        <form action="/carservice/book.php" method="post" class="space-y-4">
+        <form action="book.php" method="post" class="space-y-4">
             <div class="space-y-4">
                 <div class="service-card bg-gray-50 rounded-lg p-4 flex items-start gap-4 border border-gray-200">
                     <input type="checkbox" name="services[]" value="oil_change" id="oil_change" class="checkbox-custom">
