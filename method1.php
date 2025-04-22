@@ -7,14 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($email) || empty($password)) {
         $error_message = "All fields are required!";
-        header("Location: /carservice/login.php");
+        header("Location:login.php");
         exit();
     }
 
     $stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
     if ($stmt === false) {
         $error_message = "Database error: Unable to prepare statement.";
-        header("Location: /carservice/login.php");
+        header("Location: login.php");
         exit();
     }
 
@@ -29,16 +29,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $stored_password)) {
             session_start();
             $_SESSION['user_email'] = $email;
-            header("Location: /carservice/home.php");
+            header("Location:home.php");
             exit();
         } else {
             $error_message = "Invalid email or password!";
-            header("Location: /carservice/login.php");
+            header("Location: login.php");
             exit();
         }
     } else {
         $error_message = "User not found!";
-        header("Location: /carservice/login.php");
+        header("Location:login.php");
         exit();
     }
 
