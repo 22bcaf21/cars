@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm_booking'])) {
                 $booking_id = $stmt->insert_id;
                 $stmt->close();
                 $conn->close();
-                header("Location: /carservice/receipt.php?booking_id=" . $booking_id);
+                header("Location: receipt.php?booking_id=" . $booking_id);
                 exit();
             } else {
                 throw new Exception("Execute failed: " . $stmt->error);
@@ -198,18 +198,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm_booking'])) {
                 </div>
                 <div class="flex justify-center gap-4 mt-6">
                     <button type="submit" name="confirm_booking" class="btn animate-gradient text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirm Booking</button>
-                    <a href="/carservice/home.php" class="btn bg-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">Back to Services</a>
+                    <a href="home.php" class="btn bg-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">Back to Services</a>
                 </div>
             </form>
         <?php else: ?>
             <p class="text-gray-600 mb-6">No services selected. Please choose at least one service.</p>
             <div class="flex justify-center">
-                <a href="/carservice/home.php" class="btn bg-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">Back to Services</a>
+                <a href="home.php" class="btn bg-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">Back to Services</a>
             </div>
         <?php endif; ?>
 
         <div class="flex justify-center mt-6">
-            <a href="/carservice/login.php" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">Logout</a>
+            <a href="login.php" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">Logout</a>
         </div>
 
         <?php if (isset($error_message)): ?>
