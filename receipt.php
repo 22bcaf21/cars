@@ -3,7 +3,7 @@ session_start();
 
 // Redirect to login if user is not authenticated
 if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
-    header("Location: /carservice/login.php");
+    header("Location:login.php");
     exit();
 }
 
@@ -33,7 +33,7 @@ try {
 } catch (Exception $e) {
     $error_message = "Error: " . htmlspecialchars($e->getMessage());
     $conn->close();
-    header("Location: /carservice/login.php");
+    header("Location:login.php");
     exit();
 }
 
@@ -203,8 +203,8 @@ $conn->close();
         <?php endif; ?>
 
         <div class="flex justify-center gap-4 mt-6">
-            <a href="/carservice/home.php" class="btn animate-gradient text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Book Another Service</a>
-            <a href="/carservice/login.php" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">Logout</a>
+            <a href="home.php" class="btn animate-gradient text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Book Another Service</a>
+            <a href="login.php" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">Logout</a>
         </div>
 
         <?php if (isset($error_message)): ?>
