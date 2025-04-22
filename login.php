@@ -80,7 +80,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="/carservice/signup.php" class="toggle-btn">Sign Up</a></p>
+        <p>Don't have an account? <a href="signup.php" class="toggle-btn">Sign Up</a></p>
         <?php
         session_start();
         if (isset($_SESSION['error_message'])) {
