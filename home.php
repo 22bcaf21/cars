@@ -122,7 +122,7 @@ if (!isset($_SESSION['user_email'])) {
 
             <div class="flex justify-center gap-4 mt-8">
                 <button type="submit" class="btn animate-gradient text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Book Selected Services</button>
-                <a href="/carservice/login.php" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">Logout</a>
+                <a href="login.php" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">Logout</a>
             </div>
         </form>
     </div>
